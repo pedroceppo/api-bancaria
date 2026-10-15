@@ -13,7 +13,7 @@ public class Conta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal salario;
+    private BigDecimal salario = BigDecimal.ZERO;
 
     @OneToOne()
     @JoinColumn(name = "cliente_id", nullable = false)
