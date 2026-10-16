@@ -13,7 +13,7 @@ public class Conta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal salario = BigDecimal.ZERO;
+    private BigDecimal saldo = BigDecimal.ZERO;
 
     @OneToOne()
     @JoinColumn(name = "cliente_id", nullable = false)
@@ -21,9 +21,9 @@ public class Conta implements Serializable {
 
     public Conta() {}
 
-    public Conta(Long id, BigDecimal salario, Cliente cliente) {
+    public Conta(Long id, BigDecimal saldo, Cliente cliente) {
         this.id = id;
-        this.salario = salario;
+        this.saldo = saldo;
         this.cliente = cliente;
     }
 
@@ -35,12 +35,12 @@ public class Conta implements Serializable {
         this.id = id;
     }
 
-    public BigDecimal getSalario() {
-        return salario;
+    public BigDecimal getSaldo() {
+        return saldo;
     }
 
-    public void setSalario(BigDecimal salario) {
-        this.salario = salario;
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
     }
 
     public Cliente getCliente() {
